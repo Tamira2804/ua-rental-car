@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&family=Open+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Open+Sans:wght@400;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -6,19 +6,20 @@
 
 :root {
   /* Typography */
-  --family: 'Manrope', sans-serif;
+  --family: "Manrope", sans-serif;
   --fs-sm: 14px;
   --fs-md: 16px;
   --fs-lg: 18px;
   --fw-light: 400;
   --fw-normal: 500;
+  --fw-bold: 600;
 
   /* Other */
   --radius-sm: 12px;
   --radius-md: 14px;
 }
 
-body[data-theme='dark'] {
+body[data-theme="dark"] {
   --colors-text: #ffffff;
   --colors-text-secondary: #ffffff;
   --colors-bg: #212d38;
@@ -26,7 +27,7 @@ body[data-theme='dark'] {
 
   --shadow: rgba(245, 245, 245, 0.2) 0 0 8px;
 }
-body[data-theme='light'] {
+body[data-theme="light"] {
   --colors-text: #121417;
   --colors-text-secondary: rgba(18, 20, 23, 0.2);
   --colors-bg: #f7f7fb;
