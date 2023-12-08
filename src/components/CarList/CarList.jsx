@@ -40,7 +40,12 @@ const CarList = () => {
             ))}
           </List>
           {loadedCars < totalCars && (
-            <Button onClick={handleLoadMore} text="Load More"></Button>
+            <Button
+              width="80px"
+              onClick={handleLoadMore}
+              text="Load More"
+              variant="linked"
+            ></Button>
           )}
         </>
       )}

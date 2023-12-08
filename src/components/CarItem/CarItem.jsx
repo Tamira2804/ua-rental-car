@@ -2,9 +2,12 @@
 import Button from "../Button";
 import {
   CardThumb,
-  CardImage,
+  ImageWrapper,
+  Image,
   CardBody,
   CardTitle,
+  Title,
+  Price,
   CardList,
   CardItem,
 } from "./CarItem.styled";
@@ -12,14 +15,20 @@ import {
 const CarItem = ({ data }) => {
   return (
     <CardThumb>
-      <CardImage src={data.img} alt={data.make} />
+      <ImageWrapper>
+        <Image src={data.img} alt={data.make} />
+      </ImageWrapper>
       <CardBody>
-        <CardTitle>{`id: ${data.id} => ${data.make} ${data.year}`}</CardTitle>
+        <CardTitle>
+          <Title>
+            {data.make} {data.year}
+          </Title>
+          <Price>{data.rentalPrice}</Price>
+        </CardTitle>
         <CardList>
           <CardItem>{data.address.split(",")[1]}</CardItem>
           <CardItem>{data.address.split(",")[2]}</CardItem>
           <CardItem>{data.rentalCompany}</CardItem>
-          <CardItem>? premium</CardItem>
           <CardItem>{data.type}</CardItem>
           <CardItem>{data.model}</CardItem>
           <CardItem>{data.mileage}</CardItem>
