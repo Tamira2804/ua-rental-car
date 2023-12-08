@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCars } from "../../redux/cars/cars-operations";
 
@@ -10,7 +10,8 @@ const CarList = () => {
   const dispatch = useDispatch();
 
   const [loadedCars, setLoadedCars] = useState(12);
-  const cars = useSelector((state) => state.cars.cars.slice(0, loadedCars));
+  const [renderedCars, setRenderedCars] = useState([]);
+  const cars = useSelector((state) => state.cars.cars);
   const isLoading = useSelector((state) => state.cars.isLoading);
   const totalCars = useSelector((state) => state.cars.cars.length);
 
@@ -18,10 +19,9 @@ const CarList = () => {
     dispatch(fetchCars());
   }, [dispatch]);
 
-  const visibleCars = useMemo(
-    () => cars.slice(0, loadedCars),
-    [cars, loadedCars]
-  );
+  useEffect(() => {
+    setRenderedCars(cars.slice(0, loadedCars));
+  }, [cars, loadedCars]);
 
   const handleLoadMore = () => {
     const newLoadedCars = loadedCars + 12;
@@ -35,7 +35,7 @@ const CarList = () => {
       ) : (
         <>
           <List>
-            {visibleCars.map((car) => (
+            {renderedCars.map((car) => (
               <CarItem key={car.id} data={car} />
             ))}
           </List>
