@@ -12,7 +12,6 @@ import {
 import { carsReducer } from "./cars/cars-slice";
 import { favoritesReducer } from "./favorites-slice";
 import persistConfig from "./persistConfig";
-// import storage from "redux-persist/lib/storage";
 
 const reducers = combineReducers({
   cars: carsReducer,

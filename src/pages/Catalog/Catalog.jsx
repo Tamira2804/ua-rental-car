@@ -1,6 +1,7 @@
-import Container from '../../components/Container';
-import Header from '../../components/Header';
-import Filters from '../../components/Filters';
+import Container from "../../components/Container";
+import Header from "../../components/Header";
+import Filters from "../../components/Filters";
+import CarList from "../../components/CarList";
 
 const Catalog = () => {
   return (
@@ -9,7 +10,7 @@ const Catalog = () => {
 
       <Container>
         <Filters />
-        Catalog
+        <CarList />
       </Container>
     </>
   );

@@ -1,4 +1,4 @@
-import Image from "../../images/hero.jpg";
+// import Image from "../../images/hero.jpg";
 import Button from "../Button";
 import {
   CardThumb,
@@ -9,21 +9,21 @@ import {
   CardItem,
 } from "./CarItem.styled";
 
-const CarItem = () => {
+const CarItem = ({ data }) => {
   return (
     <CardThumb>
-      <CardImage src={Image} alt="" />
+      <CardImage src={data.img} alt={data.make} />
       <CardBody>
-        <CardTitle>Make + Year $price</CardTitle>
+        <CardTitle>{`id: ${data.id} => ${data.make} ${data.year}`}</CardTitle>
         <CardList>
-          <CardItem>adress City</CardItem>
-          <CardItem>adress Country</CardItem>
-          <CardItem>rentalCompany</CardItem>
+          <CardItem>{data.address.split(",")[1]}</CardItem>
+          <CardItem>{data.address.split(",")[2]}</CardItem>
+          <CardItem>{data.rentalCompany}</CardItem>
           <CardItem>? premium</CardItem>
-          <CardItem>type</CardItem>
-          <CardItem>module</CardItem>
-          <CardItem>mileage</CardItem>
-          <CardItem>accessories[0]</CardItem>
+          <CardItem>{data.type}</CardItem>
+          <CardItem>{data.model}</CardItem>
+          <CardItem>{data.mileage}</CardItem>
+          <CardItem>{data.accessories[0]}</CardItem>
         </CardList>
       </CardBody>
       <Button text="Learn More" />
