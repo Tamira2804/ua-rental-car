@@ -3,7 +3,7 @@ import Button from "../Button";
 
 // import {makeOptions, priceOptions} from '../../helpers';
 import {
-  Wrapper,
+  FilterForm,
   SelectBrand,
   SelectPrice,
   MileageWrapper,
@@ -40,27 +40,39 @@ for (let i = 30; i <= 500; i += 10) {
   priceList.push({ value: i, label: `${i}` });
 }
 
-const Filters = ({ makes, prices }) => {
-  const [selectedMake, setSelectedMake] = useState("");
-  const [selectedPrice, setSelectedPrice] = useState("");
+const Filters = ({ setFilterValue }) => {
+  const [make, setMake] = useState("");
+  const [price, setPrice] = useState("");
   const [fromMileage, setFromMileage] = useState("");
   const [toMileage, setToMileage] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const filteredCars = {
+      make,
+      price,
+      fromMileage,
+      toMileage,
+    };
+    console.log(filteredCars);
+    setFilterValue(filteredCars);
+  };
+
   return (
-    <Wrapper>
+    <FilterForm onSubmit={handleSubmit}>
       <SelectBrand
         options={brandList}
         placeholder={"Enter the text"}
         isClearable
-        value={selectedMake}
-        onChange={setSelectedMake}
+        value={make}
+        onChange={setMake}
       />
       <SelectPrice
         options={priceList}
         placeholder={"To $"}
         isClearable
-        value={selectedPrice}
-        onChange={setSelectedPrice}
+        value={price}
+        onChange={setPrice}
       />
       <MileageWrapper>
         <MileageInput
@@ -81,7 +93,7 @@ const Filters = ({ makes, prices }) => {
         />
       </MileageWrapper>
       <Button width="136px" text="Search" />
-    </Wrapper>
+    </FilterForm>
   );
 };
 

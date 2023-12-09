@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Select from "react-select";
 
-export const Wrapper = styled.form`
+export const FilterForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
