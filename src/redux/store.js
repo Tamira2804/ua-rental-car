@@ -10,7 +10,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import { carsReducer } from "./cars/cars-slice";
-import { favoritesReducer } from "./favorites-slice";
+import { favoritesReducer } from "./favorites/favorites-slice";
 import persistConfig from "./persistConfig";
 
 const reducers = combineReducers({

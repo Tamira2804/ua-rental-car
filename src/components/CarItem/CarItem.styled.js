@@ -10,6 +10,7 @@ export const CardThumb = styled.li`
 `;
 
 export const ImageWrapper = styled.div`
+  position: relative;
   width: 100%;
   height: 268px;
   margin-bottom: 14px;
