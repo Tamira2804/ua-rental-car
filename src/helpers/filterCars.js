@@ -6,12 +6,10 @@ export const filterCars = (cars, filterValue) => {
     const matchMake =
       !make || car.make.toLowerCase() === make.value.toLowerCase();
     const matchPrice =
-      !price || parseInt(car.rentalPrice.slice(1)) === parseInt(price.value);
+      !price || parseInt(car.rentalPrice.slice(1)) <= parseInt(price.value);
     const matchMileage =
-      !fromMileage ||
-      !toMileage ||
-      (car.mileage >= parseInt(fromMileage) &&
-        car.mileage <= parseInt(toMileage));
+      (!fromMileage || car.mileage >= parseInt(fromMileage)) &&
+      (!toMileage || car.mileage <= parseInt(toMileage));
 
     return matchMake && matchPrice && matchMileage;
   });
