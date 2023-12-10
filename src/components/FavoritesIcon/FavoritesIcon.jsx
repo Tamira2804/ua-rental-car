@@ -4,19 +4,13 @@ import {
   removeFavorite,
   addFavorite,
 } from "../../redux/favorites/favorites-slice";
-import {
-  IconWrap,
-  FullHeart,
-  EmptyHeart,
-  Label,
-  Input,
-} from "./FavoritesIcon.styled";
+import { IconWrap, FullHeart, EmptyHeart, Input } from "./FavoritesIcon.styled";
 
 const FavoritesIcon = ({ car }) => {
   const dispatch = useDispatch();
   const favoritesCars = useSelector(selectFavorites);
 
-  const isChecked = favoritesCars.favorites.some(({ id }) => id === car.id);
+  const isChecked = favoritesCars.some(({ id }) => id === car.id);
 
   const toggleFavorite = () => {
     if (isChecked) {

@@ -5,18 +5,20 @@ import CarList from "../../components/CarList";
 
 import { Wrapper } from "./Catalog.styled";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectTotalCars } from "../../redux/cars/cars-selectors";
 
 const Catalog = () => {
+  const totalCars = useSelector(selectTotalCars);
   const [filterValue, setFilterValue] = useState(null);
 
   return (
     <>
       <Header />
-
       <Container>
         <Wrapper>
           <Filters setFilterValue={setFilterValue} />
-          <CarList filterValue={filterValue} />
+          <CarList filterValue={filterValue} cars={totalCars} />
         </Wrapper>
       </Container>
     </>
