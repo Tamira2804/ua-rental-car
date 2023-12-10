@@ -48,7 +48,7 @@ const CarList = ({ filterValue }) => {
         <>
           <List>
             {renderedCars.map((car) => (
-              <CarItem key={car.id} data={car} />
+              <CarItem key={car.id} car={car} />
             ))}
           </List>
           {loadedCars < totalCars.length && (

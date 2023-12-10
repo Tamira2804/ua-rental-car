@@ -1,4 +1,7 @@
-// import Image from "../../images/hero.jpg";
+import { useState } from "react";
+
+import Modal from "../Modal";
+import ModalContent from "../ModalContent";
 import Button from "../Button";
 import {
   CardThumb,
@@ -12,31 +15,51 @@ import {
   CardItem,
 } from "./CarItem.styled";
 
-const CarItem = ({ data }) => {
+const CarItem = ({ car }) => {
+  const {
+    img,
+    make,
+    year,
+    rentalPrice,
+    address,
+    rentalCompany,
+    type,
+    model,
+    mileage,
+    accessories,
+  } = car;
+  const [isOpenModal, setIsOpenModal] = useState(false);
   return (
-    <CardThumb>
-      <ImageWrapper>
-        <Image src={data.img} alt={data.make} />
-      </ImageWrapper>
-      <CardBody>
-        <CardTitle>
-          <Title>
-            {data.make} {data.year}
-          </Title>
-          <Price>{data.rentalPrice}</Price>
-        </CardTitle>
-        <CardList>
-          <CardItem>{data.address.split(",")[1]}</CardItem>
-          <CardItem>{data.address.split(",")[2]}</CardItem>
-          <CardItem>{data.rentalCompany}</CardItem>
-          <CardItem>{data.type}</CardItem>
-          <CardItem>{data.model}</CardItem>
-          <CardItem>{data.mileage}</CardItem>
-          <CardItem>{data.accessories[0]}</CardItem>
-        </CardList>
-      </CardBody>
-      <Button text="Learn More" />
-    </CardThumb>
+    <>
+      <CardThumb>
+        <ImageWrapper>
+          <Image src={img} alt={make} />
+        </ImageWrapper>
+        <CardBody>
+          <CardTitle>
+            <Title>
+              {make} {year}
+            </Title>
+            <Price>{rentalPrice}</Price>
+          </CardTitle>
+          <CardList>
+            <CardItem>{address.split(",")[1]}</CardItem>
+            <CardItem>{address.split(",")[2]}</CardItem>
+            <CardItem>{rentalCompany}</CardItem>
+            <CardItem>{type}</CardItem>
+            <CardItem>{model}</CardItem>
+            <CardItem>{mileage}</CardItem>
+            <CardItem>{accessories[0]}</CardItem>
+          </CardList>
+        </CardBody>
+        <Button text="Learn More" onClick={() => setIsOpenModal(true)} />
+      </CardThumb>
+      {isOpenModal && (
+        <Modal onClose={() => setIsOpenModal(false)} isOpenModal={isOpenModal}>
+          <ModalContent car={car} />
+        </Modal>
+      )}
+    </>
   );
 };
 

@@ -41,13 +41,6 @@ export const Title = styled.h3`
   line-height: 1.5;
 `;
 
-export const Span = styled.span`
-  color: #3470ff;
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-normal);
-  line-height: 1.5;
-`;
-
 export const Price = styled.p`
   color: var(--colors-text);
   font-size: var(--fs-md);
@@ -80,4 +73,3 @@ export const CardItem = styled.li`
     padding-right: 6px;
   }
 `;
-export const Btn = styled.button``;
