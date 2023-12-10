@@ -1,28 +1,41 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 // import { Link } from 'react-router-dom';
-import { FaRegMoon, FaSun } from 'react-icons/fa';
-import { HeaderEl, Wrapper, Title, ModeSwitcher } from './Header.styled';
+import { FaRegMoon, FaSun } from "react-icons/fa";
+import {
+  HeaderEl,
+  Wrapper,
+  Logo,
+  LogoIcon,
+  ModeSwitcher,
+} from "./Header.styled";
+import NavBar from "../NavBar";
+import Container from "../../components/Container";
 
 const Header = () => {
-  const [theme, setTheme] = useState('light');
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
   useEffect(() => {
-    document.body.setAttribute('data-theme', theme);
+    document.body.setAttribute("data-theme", theme);
   }, [theme]);
 
   return (
     <HeaderEl>
-      <Wrapper>
-        <Title>Rental Car</Title>
-        <ModeSwitcher onClick={toggleTheme}>
-          {theme === 'light' ? (
-            <FaSun size="14px" />
-          ) : (
-            <FaRegMoon size="14px" />
-          )}
-          <span style={{ marginLeft: '0.5rem' }}> {theme} Theme</span>
-        </ModeSwitcher>
-      </Wrapper>
+      <Container>
+        <Wrapper>
+          <Logo>
+            Rental C<LogoIcon size="16px" />R
+          </Logo>
+          <NavBar />
+          <ModeSwitcher onClick={toggleTheme}>
+            {theme === "light" ? (
+              <FaRegMoon size="20px" />
+            ) : (
+              <FaSun size="20px" />
+            )}
+            <span style={{ marginLeft: "0.5rem" }}>Theme</span>
+          </ModeSwitcher>
+        </Wrapper>
+      </Container>
     </HeaderEl>
   );
 };

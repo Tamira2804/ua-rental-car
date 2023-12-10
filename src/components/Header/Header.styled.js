@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { FaCarTunnel } from "react-icons/fa6";
 
 export const HeaderEl = styled.header`
   box-shadow: var(--shadow);
@@ -8,24 +9,27 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 32px;
-  padding: 0 20px;
-  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
-  @media screen and (min-width: 768px) {
-    padding: 0 32px;
-    height: 36px;
-  }
+  margin: 0 auto;
 `;
 
-export const Title = styled.a.attrs({ href: '/' })`
+export const Logo = styled.a.attrs({ href: "/" })`
+  display: flex;
+  align-items: center;
   color: var(--colors-text);
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
   text-decoration: none;
 `;
+export const LogoIcon = styled(FaCarTunnel)`
+  fill: var(--accent);
+`;
 
 export const ModeSwitcher = styled.div`
+  display: flex;
+  align-items: center;
   color: var(--colors-text);
   font-size: var(--fs-sm);
   cursor: pointer;
