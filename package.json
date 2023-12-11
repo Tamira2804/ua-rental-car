@@ -2,6 +2,7 @@
   "name": "ua-rental-car",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Tamira2804.github.io/ua-rental-car/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^5.17.0",
