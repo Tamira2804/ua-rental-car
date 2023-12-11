@@ -75,7 +75,7 @@ export const CardList = styled.ul`
 
 export const CardItem = styled.li`
   display: block;
-  color: rgba(18, 20, 23, 0.5);
+  color: var(--colors-text-secondary);
   font-size: var(--fs-xs);
   font-weight: var(--fw-light);
   line-height: 1.5;

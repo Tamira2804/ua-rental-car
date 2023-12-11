@@ -13,7 +13,6 @@ import Loader from "../Loader";
 import { List } from "./CarList.styled";
 
 const CarList = ({ cars, filterValue }) => {
-  console.log("cars: ", cars);
   const elementsOnPage = 12;
   const dispatch = useDispatch();
 
@@ -22,6 +21,7 @@ const CarList = ({ cars, filterValue }) => {
   }, [dispatch]);
 
   const [loadedCars, setLoadedCars] = useState(elementsOnPage);
+
   const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
@@ -31,6 +31,7 @@ const CarList = ({ cars, filterValue }) => {
   }, [dispatch, cars, loadedCars, elementsOnPage]);
 
   const filteredCars = filterCars(cars, filterValue);
+
   const renderedCars = renderCars(filteredCars, 0, loadedCars);
 
   const handleLoadMore = () => {
@@ -54,10 +55,8 @@ const CarList = ({ cars, filterValue }) => {
               width="80px"
               onClick={handleLoadMore}
               text="Load More"
-              background="transparent"
-              color="var(--accent)"
-              hover="true"
-            ></Button>
+              className="linked"
+            />
           )}
         </>
       )}

@@ -54,7 +54,7 @@ const Filters = ({ setFilterValue }) => {
       fromMileage,
       toMileage,
     };
-    console.log("filterValue:", filteredCars);
+
     setFilterValue(filteredCars);
   };
 

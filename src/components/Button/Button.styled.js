@@ -10,11 +10,10 @@ export const Btn = styled.button`
   cursor: pointer;
 
   border-radius: 12px;
-  background-color: ${(props) =>
-    props.background ? props.background : "#3470ff"};
+  background-color: var(--accent);
   border: none;
 
-  color: ${(props) => (props.color ? props.color : "#ffffff")};
+  color: var(--white);
   font-family: var(--family);
   font-size: var(--fs-sm);
   font-style: normal;
@@ -22,7 +21,15 @@ export const Btn = styled.button`
   line-height: 20px;
 
   &:hover {
-    background-color: ${(props) => (props.hover ? "transparent" : "#0b44cd")};
-    color: ${(props) => (props.hover ? "#0b44cd" : "#ffffff")};
+    background-color: var(--accent-hover);
+  }
+
+  &.linked {
+    background-color: transparent;
+    color: var(--accent);
+
+    &:hover {
+      color: var(--accent-hover);
+    }
   }
 `;

@@ -13,5 +13,6 @@ export const filterCars = (cars, filterValue) => {
 
     return matchMake && matchPrice && matchMileage;
   });
+
   return filteredCars;
 };

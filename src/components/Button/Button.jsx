@@ -1,15 +1,8 @@
 import { Btn } from "./Button.styled";
 
-const Button = ({ type, width, text, onClick, background, color, hover }) => {
+const Button = ({ type, width, text, onClick, className }) => {
   return (
-    <Btn
-      type={type}
-      width={width}
-      onClick={onClick}
-      background={background}
-      color={color}
-      hover={hover}
-    >
+    <Btn type={type} width={width} onClick={onClick} className={className}>
       {text}
     </Btn>
   );

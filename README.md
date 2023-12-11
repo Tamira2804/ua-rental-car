@@ -1,95 +1,63 @@
-Тестове завдання
-Створити застосунок для компанії, що надає послуги надання в Україні автомобілів в оренду.
-Застосунок складається з 3х сторінок:
+# Car Rental Web Application
 
-# Home
+<h1 align="center">UA-RENTAL-CARS</h1>
 
-домашня сторінка з загальним описом послуг, що надає компанія. Стилізація та оформлення на ваш розсуд.
+<p align="center">
+  <img src="./src/images/forReadme/HomePage.jpg" alt="ua-rental-cars-home">
+</p>
 
-# Catalog
+This web application offers a diverse selection of rental cars to suit every taste. Users can browse through a wide catalog of cars and use the convenient sorting feature based on their preferences. Sorting options include models, prices, and mileage. Additionally, users can add their favorite cars to a corresponding list for quick access. For detailed information about a car, users can click the "Learn More" button to open a modal window.
 
-сторінка, що містить каталог автівок різної комплектації, які користувач може фільтрувати за маркою, ціною за годину оренди авто та кількістю кілометрів, яку подолав автомобіль під час його експлуатації (пробіг).
+## Functionality
 
-# Favorite
+- **Extensive Car Catalog**: Browse a wide range of cars to find the perfect fit for your needs.
 
-сторінка з оголошеннями, які були додані користувачем в улюблені Зовнішній вигляд програми повинен складатися з навігації(оформлення на ваш розсуд) та області перегляду.
+<p align="center">
+  <img src="./src/images/forReadme/Catalog.jpg" alt="ua-rental-cars-catalog">
+</p>
 
-Технічне завдання
+- **Convenient Sorting**: Use the sorting form to arrange cars by models, prices, and mileage according to your preferences.
 
-# Card
+- **Favorites List**: Easily add favorite cars to your list for quick access..
 
-Відповідно до макету реалізувати картку оголошення про здачу авто в оренду.
+<p align="center">
+  <img src="./src/images/forReadme/Favorites.jpg" alt="ua-rental-cars-favorites">
+</p>
 
-# CardList
+- **Detailed Information**: Get comprehensive information about a car by clicking the "Learn More" button to open a modal window.
 
-На першій сторінці каталогу має рендеритися 12 оголошень, а їх решта - по кліку на кнопку Load more.
+<p align="center">
+  <img src="./src/images/forReadme/Modal.jpg" alt="ua-rental-cars-modal">
+</p>
 
-# add to favorite
+## Usage
 
-У разі кліку по кнопці у вигляді “серця” на картці оголошення воно має додаватися до списку
-улюблених, а колір кнопки змінюватися.
+- Explore the catalog by navigating to the "Catalog" page.
 
-# refresh
+- Use the sorting form to arrange cars based on your preferences.
 
-При оновленні сторінки має фіксуватись кінцевий результат дій користувача. Тобто, якщо додати оголошення
-в улюблені та оновити сторінку - то кнопка все одно залишається в стані “улюбленого оголошення” із відповідним кольором.
+- Click the "Add to Favorites" button to add a car to your favorites list.
 
-# remove from favorite
+- For detailed information about a car, click the "Learn More" button to open a modal window.
 
-У разі повторного кліку по кнопці у вигляді “серця” оголошення повинно бути видалене зі списку улюблених, а колір кнопки змінитись до початкового стану.
+## Technologies and Dependencies
 
-# Modal Learn More
+#### React:
 
-У разі кліку по кнопці Learn more має відкриватись модальне вікно з детальною інформацією про авто та умови його оренди. Модальне вікно повинно закриватись по кліку на кнопку у вигляді “хрестика”, по кліку на backdrop або натисканню на клавішу Esc.
+React is a JavaScript library for building user interfaces that allows you to create dynamic and high-performing web applications. GooseTracks is based on React, making it easy to create components and manage the application's state.
 
-# mileage
+#### React-Redux:
 
-В коді пробіг авто має бути прописаний одним значенням (наприклад, 4500). В UI - виведено через кому (4,500).
+React-Redux is a library for integrating Redux into your React applications, simplifying the communication between Redux state and React components.
 
-# Кнопку Rental car
+#### Redux Toolkit:
 
-слід реалізувати як посилання, що надаватиме можливість користувачу зʼєднатись з компанією за номером телефону +380730000000.
+Redux Toolkit is a library for managing your application's state in React projects. It helps organize and streamline state management by centralizing it and providing debugging tools.
 
-# Додай фільтрацію makes.
+#### React Router DOM:
 
-dropdown із марками автомобіля makes.json - показати оголошення з автівками відповідної марки
+React Router DOM is a library for navigation and routing in React applications, allowing you to create routes and navigate between pages.
 
-# Створи маршрутизацію,
+#### React-Icons:
 
-використовуючи React Router. У застосунку повинні бути такі маршрути:
-“/” - домашня сторінка з загальним описом послуг, що надає компанія
-“/catalog” - сторінка, що містить каталог автівок різної комплектації
-“/favorites” - сторінка з оголошеннями, які були додані користувачем в улюблені Якщо користувач зайшов за маршрутом, якого не існує, його необхідно перенаправляти на домашню сторінку.
-
-# Backend
-
-Для роботи зі списком оголошень створи свій персональний бекенд для розробки за допомогою UI-сервісу https://mockapi.io/. Створи ресурс adverts. Використай конструктор ресурсу та опиши об'єкт оголошення, як описано нижче.
-
-Advert
-
-Створіть advert в Mockapi з наступними полями: id, year, make, model, type, img, description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice, rentalCompany, address, rentalConditions, mileage (див. скріншот нижче). Забороняється додавати нові поля! Для наповнення колекції можна взяти [adverts.json](https://drive.google.com/file/d/1sDtZQX4awbRiqa5mSagngqKBZeMMRUMO/view). Якщо даних не вистачає, або вони не повні - будь ласка, додайте їх самостійно.
-1
-Зображення авто можете підібрати самостійно.
-В базі має бути від 32 оголошень з різними значеннями (на ваш розсуд).
-
-# Реалізована пагінація,
-
-де одна сторінка пагінації повинна вміщати 12 оголошень.Пагінація має бути реалізована на стороні Mockapi
-
-Додай фільтрацію:
-dropdown із марками автомобіля makes.json - показати оголошення з автівками відповідної марки
-
-Додаткове завдання
-dropdown із цінами за годину оренди авто (крок 10$) - показати оголошення з автівками, ціна за оренду яких належить до діапазону цін, обраних користувачем
-група inputів для визначення діапазону пробігу, в межах якого користувач шукатиме оголошення
-
-Критерії виконання
-Верстка фіксована в рх, семантична та валідна.
-Обов’язкове використання Redux
-Для запитів використовується бібліотека Axios
-Пагінація реалізована на бекенді
-Немає помилок в консолі браузера.
-Інтерактивність працює відповідно до технічного завдання.
-Код відформатовано та не містить невикористовуваного коду
-В репозиторії має бути описаний README.md.
-Проєкт задеплоїний на github pages або netlify.com.
+React-Icons is an icon library for React projects. It provides access to a large set of icons that can be used directly in your application as React components.

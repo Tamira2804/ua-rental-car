@@ -23,7 +23,7 @@ const Header = () => {
       <Container>
         <Wrapper>
           <Logo>
-            Rental C<LogoIcon size="16px" />R
+            UA Rental C<LogoIcon size="16px" />R
           </Logo>
           <NavBar />
           <ModeSwitcher onClick={toggleTheme}>
