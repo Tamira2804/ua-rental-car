@@ -7,6 +7,12 @@ export const CardThumb = styled.li`
 
   width: 274px;
   height: 426px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -22,10 +28,11 @@ export const Image = styled.img`
   object-fit: cover;
   object-position: center;
   border-radius: 14px;
+  background-color: var(--colors-text-inactive);
 `;
-export const FavoriteIcon = styled.div``;
 
 export const CardBody = styled.div`
+  padding: 0 8px;
   margin-bottom: 28px;
 `;
 
@@ -33,13 +40,18 @@ export const CardTitle = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+  & span {
+    color: var(--accent);
+  }
 `;
 
 export const Title = styled.h3`
   color: var(--colors-text);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-md);
   font-weight: var(--fw-normal);
   line-height: 1.5;
+  height: 24px;
+  overflow: hidden;
 `;
 
 export const Price = styled.p`
@@ -64,12 +76,12 @@ export const CardList = styled.ul`
 export const CardItem = styled.li`
   display: block;
   color: rgba(18, 20, 23, 0.5);
-  font-size: 12px;
+  font-size: var(--fs-xs);
   font-weight: var(--fw-light);
   line-height: 1.5;
 
   &:not(:last-child) {
-    border-right: 1px solid rgba(18, 20, 23, 0.1);
+    border-right: 1px solid var(--colors-text-secondary);
     margin-right: 6px;
     padding-right: 6px;
   }

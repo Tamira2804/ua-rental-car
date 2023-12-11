@@ -4,12 +4,13 @@ import {
   fetchAllCars,
   fetchCarsByPage,
 } from "../../redux/cars/cars-operations";
+import { selectIsLoading } from "../../redux/cars/cars-selectors";
 import { filterCars, renderCars } from "../../helpers";
 
 import CarItem from "../CarItem";
 import Button from "../Button";
+import Loader from "../Loader";
 import { List } from "./CarList.styled";
-import { selectIsLoading } from "../../redux/cars/cars-selectors";
 
 const CarList = ({ cars, filterValue }) => {
   console.log("cars: ", cars);
@@ -40,7 +41,7 @@ const CarList = ({ cars, filterValue }) => {
   return (
     <>
       {isLoading ? (
-        "Loading..."
+        <Loader />
       ) : (
         <>
           <List>
@@ -53,7 +54,9 @@ const CarList = ({ cars, filterValue }) => {
               width="80px"
               onClick={handleLoadMore}
               text="Load More"
-              variant="linked"
+              background="transparent"
+              color="var(--accent)"
+              hover="true"
             ></Button>
           )}
         </>

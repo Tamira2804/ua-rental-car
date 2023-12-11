@@ -14,7 +14,7 @@ import {
   ConditionsList,
   ConditionsItem,
 } from "./ModalContent.styled";
-import noImages from "../../images/defaultImage.jpg";
+import noImages from "../../images/defaultImage.png";
 
 const ModalContent = ({ car }) => {
   const {

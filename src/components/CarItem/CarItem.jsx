@@ -15,6 +15,7 @@ import {
   CardItem,
 } from "./CarItem.styled";
 import FavoritesIcon from "components/FavoritesIcon";
+import noImages from "../../images/defaultImage.png";
 
 const CarItem = ({ car }) => {
   const {
@@ -34,13 +35,13 @@ const CarItem = ({ car }) => {
     <>
       <CardThumb>
         <ImageWrapper>
-          <Image src={img} alt={make} />
+          <Image src={img === "" ? noImages : img} alt={make} />
           <FavoritesIcon car={car} />
         </ImageWrapper>
         <CardBody>
           <CardTitle>
             <Title>
-              {make} {year}
+              {make} <span>{model}</span> {year}
             </Title>
             <Price>{rentalPrice}</Price>
           </CardTitle>

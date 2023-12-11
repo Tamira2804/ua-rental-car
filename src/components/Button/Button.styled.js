@@ -11,10 +11,10 @@ export const Btn = styled.button`
 
   border-radius: 12px;
   background-color: ${(props) =>
-    props.variant === "linked" ? "transparent" : "#3470ff"};
+    props.background ? props.background : "#3470ff"};
   border: none;
 
-  color: ${(props) => (props.variant === "linked" ? "#3470ff" : " #ffffff")};
+  color: ${(props) => (props.color ? props.color : "#ffffff")};
   font-family: var(--family);
   font-size: var(--fs-sm);
   font-style: normal;
@@ -22,7 +22,7 @@ export const Btn = styled.button`
   line-height: 20px;
 
   &:hover {
-    background-color: ${(props) =>
-      props.variant === "linked" ? "transparent" : "#0b44cd"};
+    background-color: ${(props) => (props.hover ? "transparent" : "#0b44cd")};
+    color: ${(props) => (props.hover ? "#0b44cd" : "#ffffff")};
   }
 `;

@@ -9,7 +9,7 @@ export const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(18, 20, 23, 0.5);
+  background-color: var(--colors-bg-overlay);
   z-index: 999;
 `;
 
@@ -18,8 +18,8 @@ export const ModalWindow = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 24px;
-  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  background-color: var(--colors-bg);
 
   width: 541px;
   padding: 40px;
@@ -37,24 +37,24 @@ export const ModalWindow = styled.div`
 
 export const CloseBtn = styled.button`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 14px;
+  right: 14px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 4px;
   width: 24px;
   height: 24px;
   border: 0;
   background-color: inherit;
   cursor: pointer;
   outline: none;
-  color: var(--main-text);
+  color: var(--colors-text);
   transition: color var(--transition);
 
   :hover,
   :focus {
-    color: var(--hover);
+    color: var(--accent);
   }
 `;

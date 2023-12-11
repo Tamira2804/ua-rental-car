@@ -5,14 +5,18 @@ export const FilterForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 14px;
+  gap: 8px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: 18px;
   }
+`;
+
+export const Label = styled.label`
+  color: var(--colors-text-label);
 `;
 
 export const SelectBrand = styled(Select).attrs({
@@ -22,9 +26,9 @@ export const SelectBrand = styled(Select).attrs({
       width: "224px",
       height: "48px",
       cursor: "pointer",
-      backgroundColor: "var(--colors-ui-base)",
+      backgroundColor: "var(--colors-bg-input)",
       color: "var(--colors-text)",
-      borderRadius: "var(--radius-sm)",
+      borderRadius: "var(--radius-md)",
       padding: "8px",
       border: "none",
       boxShadow: "var(--shadow)",
@@ -37,8 +41,14 @@ export const SelectBrand = styled(Select).attrs({
     option: (provided, { isFocused }) => ({
       ...provided,
       cursor: "pointer",
-      color: isFocused ? "var(--colors-text)" : "var(--colors-text-secondary)",
-      backgroundColor: isFocused ? "var(--colors-bg)" : "var(--colors-ui-base)",
+      color: isFocused ? "var(--colors-text)" : "var(--colors-text-inactive)",
+      backgroundColor: isFocused
+        ? "var(--colors-bg-input)"
+        : "var(--colors-bg)",
+    }),
+    inputLabel: (provided) => ({
+      ...provided,
+      color: "var(--colors-text)",
     }),
 
     placeholder: (provided) => ({
@@ -49,7 +59,8 @@ export const SelectBrand = styled(Select).attrs({
 })`
   font-family: var(--family);
   border: 1px solid rgba(18, 20, 23, 0.05);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
+  margin-top: 4px;
 
   & > * {
     box-shadow: var(--shadow);
@@ -57,8 +68,13 @@ export const SelectBrand = styled(Select).attrs({
   & input {
     padding-left: 0.25rem;
   }
+
   & [class$="-menu"] {
-    background-color: var(--colors-ui-base);
+    background-color: var(--colors-bg);
+  }
+
+  & [class$="-singleValue"] {
+    color: var(--colors-text);
   }
 `;
 
@@ -66,12 +82,13 @@ export const SelectPrice = styled(Select).attrs({
   styles: {
     control: (provided) => ({
       ...provided,
-      width: "125px",
+      width: "144px",
       height: "48px",
       cursor: "pointer",
-      backgroundColor: "var(--colors-ui-base)",
+      backgroundColor: "var(--colors-bg-input)",
       color: "var(--colors-text)",
-      borderRadius: "var(--radius-sm)",
+
+      borderRadius: "var(--radius-md)",
       padding: "8px",
       border: "none",
       boxShadow: "var(--shadow)",
@@ -84,8 +101,10 @@ export const SelectPrice = styled(Select).attrs({
     option: (provided, { isFocused }) => ({
       ...provided,
       cursor: "pointer",
-      color: isFocused ? "var(--colors-text)" : "var(--colors-text-secondary)",
-      backgroundColor: isFocused ? "var(--colors-bg)" : "var(--colors-ui-base)",
+      color: isFocused ? "var(--colors-text)" : "var(--colors-text-inactive)",
+      backgroundColor: isFocused
+        ? "var(--colors-bg-input)"
+        : "var(--colors-bg)",
     }),
 
     placeholder: (provided) => ({
@@ -97,20 +116,28 @@ export const SelectPrice = styled(Select).attrs({
   font-family: var(--family);
   border: 1px solid rgba(18, 20, 23, 0.05);
   border-radius: var(--radius-sm);
+  margin-top: 4px;
 
   & > * {
     box-shadow: var(--shadow);
   }
   & input {
     padding-left: 0.25rem;
+    color: var(--colors-text);
   }
+
   & [class$="-menu"] {
-    background-color: var(--colors-ui-base);
+    background-color: var(--colors-bg);
+  }
+
+  & [class$="-singleValue"] {
+    color: var(--colors-text);
   }
 `;
 
 export const MileageWrapper = styled.div`
   position: relative;
+  margin-top: 4px;
 
   &:before {
     content: "From:";
@@ -120,7 +147,7 @@ export const MileageWrapper = styled.div`
     line-height: 1.11;
 
     position: absolute;
-    top: 57%;
+    top: 50%;
     left: 12px;
     transform: translateY(-50%);
   }
@@ -133,7 +160,7 @@ export const MileageWrapper = styled.div`
     line-height: 1.11;
 
     position: absolute;
-    top: 57%;
+    top: 50%;
     right: 90px;
     transform: translateY(-50%);
   }
@@ -143,6 +170,7 @@ export const MileageInput = styled.input`
   font-weight: var(--fw-normal);
   line-height: 1.11;
   color: var(--colors-text);
+  background-color: var(--colors-bg-input);
 
   border: none;
   outline: none;

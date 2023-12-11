@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Button from "../Button";
 
-// import {makeOptions, priceOptions} from '../../helpers';
 import {
   FilterForm,
+  Label,
   SelectBrand,
   SelectPrice,
   MileageWrapper,
@@ -60,38 +60,50 @@ const Filters = ({ setFilterValue }) => {
 
   return (
     <FilterForm onSubmit={handleSubmit}>
-      <SelectBrand
-        options={brandList}
-        placeholder={"Enter the text"}
-        isClearable
-        value={make}
-        onChange={setMake}
-      />
-      <SelectPrice
-        options={priceList}
-        placeholder={"To $"}
-        isClearable
-        value={price}
-        onChange={setPrice}
-      />
-      <MileageWrapper>
-        <MileageInput
-          type="number"
-          id="mileagefrom"
-          min="0"
-          max="99999"
-          value={fromMileage}
-          onChange={(e) => setFromMileage(e.target.value)}
+      <Label>
+        Car brand
+        <SelectBrand
+          options={brandList}
+          placeholder={"Enter the text"}
+          isClearable
+          value={make}
+          onChange={setMake}
         />
-        <MileageInput
-          type="number"
-          id="mileageto"
-          min="0"
-          max="99999"
-          value={toMileage}
-          onChange={(e) => setToMileage(e.target.value)}
+      </Label>
+      <Label>
+        Price/ 1 hour
+        <SelectPrice
+          options={priceList}
+          placeholder={"To $"}
+          isClearable
+          value={price}
+          onChange={setPrice}
+          formatValueLabel={({ label }) => {
+            <div>To {label}$</div>;
+          }}
         />
-      </MileageWrapper>
+      </Label>
+      <Label>
+        Сar mileage / km
+        <MileageWrapper>
+          <MileageInput
+            type="number"
+            id="mileagefrom"
+            min="0"
+            max="99999"
+            value={fromMileage}
+            onChange={(e) => setFromMileage(e.target.value)}
+          />
+          <MileageInput
+            type="number"
+            id="mileageto"
+            min="0"
+            max="99999"
+            value={toMileage}
+            onChange={(e) => setToMileage(e.target.value)}
+          />
+        </MileageWrapper>
+      </Label>
       <Button width="136px" text="Search" />
     </FilterForm>
   );

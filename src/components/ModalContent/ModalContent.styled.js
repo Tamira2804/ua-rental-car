@@ -11,16 +11,8 @@ export const Image = styled.img`
   height: 268px;
   object-fit: cover;
   object-position: center;
-  border-radius: 14px;
-
-  /* background-position: center;
-  background-size: cover;
-  background: linear-gradient(
-      180deg,
-      rgba(18, 20, 23, 0.5) 2.5%,
-      rgba(18, 20, 23, 0) 41.07%
-    ),
-    #f3f3f2; */
+  border-radius: var(--radius-md);
+  background-color: var(--colors-text-inactive);
 `;
 
 export const CardBody = styled.div`
@@ -47,7 +39,7 @@ export const CardTitle = styled.div`
 
 export const Title = styled.h3`
   color: var(--colors-text);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-lg);
   font-weight: var(--fw-normal);
   line-height: 1.5;
   padding-bottom: 4px;
@@ -66,13 +58,13 @@ export const CardList = styled.ul`
 
 export const CardItem = styled.li`
   display: block;
-  color: rgba(18, 20, 23, 0.5);
-  font-size: 12px;
+  color: var(--colors-text-secondary);
+  font-size: var(--fs-xs);
   font-weight: var(--fw-light);
   line-height: 1.5;
 
   &:not(:last-child) {
-    border-right: 1px solid rgba(18, 20, 23, 0.1);
+    border-right: 1px solid var(--colors-text-secondary);
     margin-right: 6px;
     padding-right: 6px;
   }
@@ -99,14 +91,15 @@ export const ConditionsList = styled.ul`
   flex-wrap: wrap;
   gap: 8px;
 
-  font-size: 12px;
+  font-size: var(--fs-xs);
   letter-spacing: -0.24px;
+  padding-bottom: 4px;
 `;
 
 export const ConditionsItem = styled.li`
   border-radius: 35px;
-  color: #363535;
-  background-color: #f9f9f9;
+  color: var(--colors-text-conditions);
+  background-color: var(--colors-bg-conditions);
   padding: 7px 14px;
 
   & span {

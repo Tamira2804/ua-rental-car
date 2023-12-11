@@ -3,7 +3,7 @@ import { FaCarTunnel } from "react-icons/fa6";
 
 export const HeaderEl = styled.header`
   box-shadow: var(--shadow);
-  background-color: var(--colors-ui-base);
+  background-color: var(--colors-bg-input);
 `;
 export const Wrapper = styled.div`
   display: flex;
