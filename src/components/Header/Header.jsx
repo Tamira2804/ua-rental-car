@@ -22,7 +22,7 @@ const Header = () => {
     <HeaderEl>
       <Container>
         <Wrapper>
-          <Logo>
+          <Logo to="/">
             UA Rental C<LogoIcon size="16px" />R
           </Logo>
           <NavBar />
